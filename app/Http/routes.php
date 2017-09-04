@@ -15,6 +15,6 @@ $app->get('/', function () use ($app) {
     return $app->welcome();
 });
 
-$app->post('/passtel-api', ['uses' => 'WebHookController@passtelWeb']);
+$app->post('/passtel-web', ['uses' => 'WebHookController@passtelWeb']);
 
-$app->get('/passtel-api', ['uses' => 'WebHookController@passtelWeb']);
+$app->get('/passtel-web', ['uses' => 'WebHookController@passtelWeb']);
