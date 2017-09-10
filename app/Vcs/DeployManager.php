@@ -10,6 +10,7 @@ namespace App\Vcs;
 
 
 use App\Repositories;
+use phpseclib\Net\SSH2;
 
 class DeployManager
 {
@@ -26,7 +27,6 @@ class DeployManager
         $repositories = new Repositories();
         $path = $repositories->getPathByFullName($fullName);
 
-        $deploy->forceMerger($path);
-
+        return $deploy->forceMerger($path);
     }
 }

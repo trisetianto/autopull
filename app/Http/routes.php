@@ -18,3 +18,7 @@ $app->get('/', function () use ($app) {
 $app->post('/passtel-web', ['uses' => 'WebHookController@passtelWeb']);
 
 $app->get('/passtel-web', ['uses' => 'WebHookController@passtelWeb']);
+
+$app->post('bitbucket-hook', ['uses' => 'WebHookController@bitbucket']);
+
+$app->get('bitbucket-hook', ['uses' => 'WebHookController@bitbucket']);

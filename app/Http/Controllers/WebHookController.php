@@ -8,6 +8,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Vcs\DeployManager;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 use phpseclib\Net\SSH2;
@@ -40,7 +41,14 @@ class WebHookController extends Controller
         Log::info(print_r("actor\n" . $request->input('actor'),true));
         Log::info(print_r("repository\n" . $request->input('repository'),true));
 
+        $repository = $request->input('repository');
 
+        $fullName = $repository['full_name'];
+
+
+        $manager  = new DeployManager();
+
+        return $manager->deploy($fullName);
 
     }
 }

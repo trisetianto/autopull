@@ -30,5 +30,7 @@ class GitSshDeploy implements DeployInterface
         $this->ssh->read("$");
         $this->ssh->read("git reset --hard origin/master\n");
         $hasil = $this->ssh->read('$');
+
+        return $hasil;
     }
 }
