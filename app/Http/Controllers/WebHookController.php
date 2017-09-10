@@ -34,4 +34,13 @@ class WebHookController extends Controller
 
         return $hasil;
     }
+
+    public function bitbucket(Request $request)
+    {
+        Log::info(print_r("actor\n" . $request->input('actor'),true));
+        Log::info(print_r("repository\n" . $request->input('repository'),true));
+
+
+
+    }
 }
